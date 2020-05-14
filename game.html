@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>  
+        <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+        <meta content="utf-8" http-equiv="encoding">
+    </head>
+    <body>
+        <script>
+
+    function computerPlay() {
+        randomNumber = Math.random();
+        if (randomNumber <= 2/3 && randomNumber > 1/3) 
+        {
+        return "Rock";
+        }
+        else if (randomNumber <= 1/3)
+        {
+        return "Paper";
+        }
+        else {
+          return "Scissors";
+         } 
+        };
+
+
+
+function playRound(playerSelection, computerSelection) {
+    let playerSmall = playerSelection.toLowerCase();
+    let computerSmall = computerSelection.toLowerCase();
+
+    if (playerSmall === computerSmall)
+    {
+     return "Draw!";
+    }
+    else if (playerSmall === "rock" && computerSmall === "paper")
+    {
+     return "You lose, " + computerSmall + " beats "+ playerSmall;
+    }
+    else if (playerSmall === "rock" && computerSmall === "scissors")
+    {
+     return "You win, " + playerSmall + " beats "+ computerSmall;
+    }
+    else if (playerSmall === "paper" && computerSmall === "scissors")
+    {
+     return "You lose, " + computerSmall + " beats "+ playerSmall;
+    }
+    else if (playerSmall === "paper" && computerSmall === "rock")
+    {
+     return "You win, " + playerSmall + " beats "+ computerSmall;
+    }
+    else if (playerSmall === "scissors" && computerSmall === "rock")
+    {
+     return "You lose, " + computerSmall + " beats "+ playerSmall;
+    }
+    else if (playerSmall === "scissors" && computerSmall === "paper")
+    {
+     return "You win, " + playerSmall + " beats "+ computerSmall;
+    }
+    else if (playerSmall !== "")
+    {
+        return "Not a valid answer. Try again!"
+    }
+}
+    //console.log(playRound(playerSelection, computerSelection));
+    
+    function game()
+    {
+        for (i = 0; i < 5; i++)
+        {
+        let playerSelection = prompt("Choose wisely!");
+        let computerSelection = computerPlay();
+        console.log(playRound(playerSelection, computerSelection));
+        }
+    }
+    console.log(game());
+    </script>
+    </body>
+</html>
